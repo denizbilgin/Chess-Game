@@ -13,8 +13,7 @@ public class Pawn extends Piece {
                 if (rowDistance == 2) {
                     if (initialLocation) {
                         //pawn is moving twice, check two squares in front are empty
-                        Square[] between = location.getBoard().getSquaresBetween(location,
-                                targetLocation);
+                        Square[] between = location.getBoard().getSquaresBetween(location, targetLocation);
                         validMove = targetLocation.isEmpty() && between[0].isEmpty();
                     }
                 } else {
@@ -25,8 +24,7 @@ public class Pawn extends Piece {
                 if (rowDistance == -2) {
                     if (initialLocation) {
                         //pawn is moving twice, check two squares in front are empty
-                        Square[] between = location.getBoard().getSquaresBetween(location,
-                                targetLocation);
+                        Square[] between = location.getBoard().getSquaresBetween(location, targetLocation);
                         validMove = targetLocation.isEmpty() && between[0].isEmpty();
                     }
                 } else {
@@ -59,6 +57,7 @@ public class Pawn extends Piece {
         //update current location
         location = targetLocation;
         location.getBoard().nextPlayer();
+        initialLocation = false;
     }
     @Override
     public String toString() {

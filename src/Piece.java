@@ -12,10 +12,6 @@ public class Piece {
         this.location = location;
     }
 
-    public void setColor(int color) {
-        this.color = color;
-    }
-
     public Square getLocation() {
         return location;
     }
@@ -25,14 +21,17 @@ public class Piece {
     }
 
 
-
-    public void move(String destination)
-    {
-        return;
+    public void move(String to) {
+        Square targetLocation = location.getBoard().getSquareAt(to);
+        targetLocation.setPiece(this);
+        //clear previous location
+        location.clear();
+        //update current location
+        location = targetLocation;
+        location.getBoard().nextPlayer();
     }
 
-    public boolean canMove(String destination)
-    {
+    public boolean canMove(String to) {
         return true;
     }
 }

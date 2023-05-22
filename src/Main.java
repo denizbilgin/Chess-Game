@@ -25,7 +25,12 @@ public class Main {
             System.out.println(board);
         }
         reader.close();
+        System.out.println("Good Game!");
+        String winnerMessage = board.isWhitePlaying() ? "Black" : "White";
+        winnerMessage += " player wins!";
+        System.out.println(winnerMessage);
     }
 
-    // şah çekmek, arayüz, her promote, piyon 1 gitmek, oynana hamleleri tutan array
+    // şah çekmek, arayüz, her promote, piyon 1 gitmek, oynana hamleleri tutan array, king gibi classlardaki if(targetLocation.isEmpty()) kısmını basitleştir (rook gibi)
+    // parantezleri checkle
 }
